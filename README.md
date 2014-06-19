@@ -3,19 +3,36 @@
 ===
 
 
-
 ## Purposes
 
 - To clean the raw files and make a tidy dataset for later processing
 
 - To demonstrate the ability to collect, work with, and clean a data set. 
 
+
+## General Description
+
+
+According to the course project requirements, the run_analysis.R is supposed to do the following tasks right now:
+
+
+	1. Merges the training and the test sets to create one data set.   
+	2. Extracts only the measurements on the mean and standard deviation for each measurement.   
+	3. Uses descriptive activity names to name the activities in the data set      
+	4. Appropriately labels the data set with descriptive variable names.    
+	5. Creates a second, independent tidy data set with the average of each variable for each activity and each subject. 
+
+
+For information about the raw datasets, please also see the README file under the directory "UCI HAR Dataset"
+
+
+
 ## Files Layout
 
-- UCI HAR Dataset and its subdirectory   
-raw data retrieved from link on course project page, <https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip> 
+- UCI HAR Dataset and its subdirectory :   
+raw data retrieved from link on course project page, <https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip> and unzipped
 
-- run_analysis.R    
+- run_analysis.R   
 the processing script for generating the tidy datasets.
 
 - README.md
