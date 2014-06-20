@@ -48,18 +48,18 @@ The variables of the raw data sets are described respectively among files, which
 	* Use rbind(x,...) to combined.
 	* NOTE: Because there is a bad-formatted recording in the raw data file X_test.txt(line 454, column 375, "1.4662419E461494e-001"), when reading from file, colClasses="numeric" is ignored to avoid process abort. When reading without specifying 'colClasses', that recording is implicitly intepretered as something like '1.46624-001', reasonable enough to accept.   
 	
-2.  Assign basic colnames to easier column-referencing   
+2.  Assign basic colnames to easier column-referencing.   
 	* After combining, the colnames of the data frame will look like "V1, V1, V1, V2, ....", so "subject" and "activity" is assigned to the names of the leftmost two columns, then use number 1 to 561 for the next 561 variables.  
 	
 	
-3.  Extracts only the measurements on the mean and standard deviation for each measurement
+3.  Extracts only the measurements on the mean and standard deviation for each measurement.
 	* One way to extract the target measurement is to collect a vector of sequence numbers of the features from file 'features.txt', then use that vector to select the target measurements.
 	* NOTE: Because there are two columns (subject and activity) at the leftmost in the combined data, to correctly select columns, the vector elements should plus two for indexing the tareget columns. 
 	* To select target features from file 'features.txt', use grepl() as conditions. A new data frame containing  selected features (numbers and names) is generated
 	* NOTE: Because 'mean' text appears in "fBodyAcc-meanFreq()-X" and "fBodyAcc-mean()-X", use "-mean()" with hyphen and parenthesis included to avoid unwanted features.
 
 
-4. Uses descriptive activity names to name the activities in the data set
+4. Uses descriptive activity names to name the activities in the data set.
 	* Activity names(WALKIING, SITTING, etc) are listed in activity_labels.txt, after reading into a data frame, the row.names and sequence numbers are the same, so the activity names can be retrieved by specifying [row,column]. Changed the activity names from number to text.
 	
 5. Appropriately labels the data set with descriptive variable names. 
@@ -67,21 +67,32 @@ The variables of the raw data sets are described respectively among files, which
 	
 6. Creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 	* From step 1, the column names of the combined data is not descriptive, use features vectors generated in Step 3 for updating. The leftmost two columns named 'subject' and 'activity'.
-	* Apply aggregate(x,by="",...) to aggregate the data by columns 'subject' and 'activity'. Calculate the average.
-	* Aggregate 
+	* Use aggregate(x,by="",...) to aggregate the data by columns 'subject' and 'activity'. Calculate the average for each measurements.
+	* Replace group.name with 'subject' and 'activity' names.
+	* Aggragation of data will make 'subject' column as character type, observations of one subject(voluteer) are not consecutive, so converting the subject to numeric for ordering.
+	* Replace the column names of each feature to express the mean(...) result. 'Average_<feature_name>' is used.
 
+7. Saved data.
 
 
 ### Data Files
 
-Total 2 data files are expected to be generated after executing run_analysis.R.
+- Total 2 data files are generated after executing run_analysis.R.
+
+- Each observation is in a seperate row, data is separated by comma. 
 
 
-#### 1. meansurements.mean.std.group.by.subject.activity.txt
+#### 1. data/meansurements.mean.std.with.subject.activity.csv
+
+nrow : 10299  
+ncol : 81   
+column names:  "subject", "activity", 561 features mentioned in features.txt of raw data set.
 
 
+#### 2. data/average.meansurements.group.by.subject.activity.csv
 
-
-#### 2. average.meansurements.group.by.subject.activity.txt
+nrow : 180  
+ncol : 563   
+column names:  "subject", "activity", 561 features mentioned in features.txt of raw data set.
 
 
