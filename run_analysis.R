@@ -63,11 +63,11 @@ names(average_measures)[3:563]  <- paste( "average", names(average_measures)[3:5
 if (!file.exists("./data")){
     dir.create("./data")
 }  
-write.table(merged.mean.and.std, file="./data/meansurements.mean.std.with.subject.activity.csv", row.names = F, sep = ",")
-write.table(average_measures, file="./data/average.meansurements.group.by.subject.activity.csv", row.names = F,sep = ",")
+write.table(merged.mean.and.std, file="./data/meansurements.mean.std.with.subject.activity.txt", row.names = F, sep = " ")
+write.table(average_measures, file="./data/average.meansurements.group.by.subject.activity.txt", row.names = F,sep = " ")
 
 
 ## verification of output
-#test_merged.mean.and.std <- read.delim("./data/meansurements.mean.std.with.subject.activity.csv", sep=",", header=T)
-#test_average_measures <-  read.delim("./data/average.meansurements.group.by.subject.activity.csv", sep=",", header=T)
+#test_merged.mean.and.std <- read.delim("./data/meansurements.mean.std.with.subject.activity.txt", sep=" ", header=T)
+#test_average_measures <-  read.delim("./data/average.meansurements.group.by.subject.activity.txt", sep=" ", header=T)
 

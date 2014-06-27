@@ -7,7 +7,7 @@
 
 * Some of the content is copied from the codebook of the raw data sets in order to demonstrate proper content for a codebook of data procesing flow without referring too much information to other texts or links. 
 
-* Nouns like 'variables', 'measurements',et al. should be interpreterred as common name about the data or the statistics, not as computer science jargon. Without explicit explanations, 'variables' and 'measurement' are interchangeable when referring to the data.
+* Nouns like 'variables', 'measurements',et al. should be interpreterred as common name about the data or the statistics, not as computer science jargon.
 
 
 * The author can be reached via email neilalaer@gmail.com. Any suggestion or advice is welcome.
@@ -79,7 +79,7 @@ The variables of the raw data sets are described respectively among files, which
 
 - Total 2 data files are generated after executing run_analysis.R.
 
-- Each observation is in a seperate row, data is separated by comma. 
+- Each observation is in a seperate row, data is separated by "(whitespace)". 
 
 
 #### 1. data/meansurements.mean.std.with.subject.activity.csv
